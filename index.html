@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>Cookie Clicker</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      background-color: lightblue;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: white;
+      border: none;
+    }
+
+    .disclaimer {
+      font-family: "Papyrus", sans-serif;
+      font-size: 20px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cookie Clicker</h1>
+  <p>Click the button to earn cookies!</p>
+  <button onclick="addCookie()">Earn Cookie</button>
+  <p id="cookies">0</p>
+  <audio id="youwin" src="youwin.mp3"></audio>
+
+  <div class="disclaimer">
+    DISCLAIMER: DO NOT EAT THE COOKIES IN THIS GAME. THEY ARE NOT REAL.
+  </div>
+
+  <script>
+    let cookies = 0;
+    const cookieCounter = document.getElementById("cookies");
+    const youwinSound = document.getElementById("youwin");
+
+    function addCookie() {
+      cookies++;
+      cookieCounter.innerHTML = cookies;
+      if (cookies >= 10) {
+        youwinSound.play();
+      }
+    }
+  </script>
+</body>
+</html>
+
